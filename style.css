@@ -1,45 +1,149 @@
+/* ==========================
+   GLOBAL STYLES
+========================== */
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #343541;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #d1d5db;
 }
 
+/* ==========================
+   CHAT CONTAINER
+========================== */
 #chat-container {
-    width: 400px;
-    margin: 50px auto;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 10px;
+    width: 500px;
+    max-width: 95%;
+    margin: 20px auto;
+    background-color: #40414f;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
+/* ==========================
+   MESSAGES AREA
+========================== */
 #messages {
-    height: 300px;
+    flex: 1;
+    height: 500px;
     overflow-y: auto;
-    border: 1px solid #ddd;
-    padding: 5px;
-    margin-bottom: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #343541;
 }
 
+/* ==========================
+   INDIVIDUAL MESSAGES
+========================== */
+.user, .bot {
+    padding: 10px 14px;
+    border-radius: 20px;
+    max-width: 75%;
+    word-wrap: break-word;
+}
+
+/* USER MESSAGES */
 .user {
-    text-align: right;
-    color: blue;
-    margin: 5px 0;
+    align-self: flex-end;
+    background-color: #10a37f;
+    color: white;
+    border-bottom-right-radius: 2px;
 }
 
+/* BOT MESSAGES */
 .bot {
-    text-align: left;
-    color: green;
-    margin: 5px 0;
+    align-self: flex-start;
+    background-color: #444654;
+    color: #d1d5db;
+    border-bottom-left-radius: 2px;
 }
 
+/* ==========================
+   INPUT AREA
+========================== */
 #input-area {
     display: flex;
+    padding: 12px;
+    background-color: #40414f;
+    border-top: 1px solid #555;
+    gap: 10px;
 }
 
-input {
+#messageInput {
     flex: 1;
-    padding: 5px;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    background-color: #343541;
+    color: #d1d5db;
+    font-size: 14px;
+}
+
+#messageInput:focus {
+    outline: none;
 }
 
 button {
-    padding: 5px 10px;
+    background-color: #10a37f;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0d7a61;
+}
+
+/* ==========================
+   SCROLLBAR STYLING
+========================== */
+#messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 3px;
+}
+
+#messages::-webkit-scrollbar-track {
+    background-color: #343541;
+}
+
+/* ==========================
+   MOBILE RESPONSIVENESS
+========================== */
+@media (max-width: 600px) {
+    #chat-container {
+        width: 95%;
+        margin: 10px;
+    }
+
+    #messages {
+        height: 400px;
+        padding: 12px;
+    }
+
+    #messageInput {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    button {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
 }
