@@ -5,3 +5,5 @@ pymongo
 pydantic
 fastapi
 sentence_transformers 
+uvicorn
+fastapi
